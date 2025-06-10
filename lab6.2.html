@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Web Design</title>
+    <style>
+        /* Basic Styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            transition: background-color 0.3s ease;
+        }
+
+        h1 {
+            font-size: 3rem;
+            text-align: center;
+            color: #333;
+        }
+
+        /* Default Navigation Bar */
+        nav {
+            background-color: #333;
+            color: white;
+            padding: 10px 20px;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        nav ul li {
+            display: inline;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            display: inline-block;
+        }
+
+        nav ul li a:hover {
+            background-color: #555;
+        }
+
+        /* Container Styling */
+        .container {
+            padding: 20px;
+            margin: 20px;
+            background-color: #f4f4f4;
+        }
+
+        /* Default Image */
+        .image {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Media Queries */
+        /* Change background color when screen width is less than 600px */
+        @media (max-width: 600px) {
+            body {
+                background-color: #f1c40f;
+            }
+        }
+
+        /* Responsive Navigation Bar - Convert to Dropdown on smaller screens */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                padding-left: 0;
+            }
+
+            nav ul li {
+                text-align: center;
+                width: 100%;
+            }
+
+            nav ul li a {
+                padding: 15px;
+                display: block;
+                text-align: center;
+            }
+
+            /* Dropdown Menu for Smaller Screens */
+            nav ul li a:hover {
+                background-color: #444;
+            }
+        }
+
+        /* Hide image on screens smaller than 480px */
+        @media (max-width: 480px) {
+            .image {
+                display: none;
+            }
+        }
+
+        /* Increase font size for h1 on screens greater than 1024px */
+        @media (min-width: 1024px) {
+            h1 {
+                font-size: 4rem;
+            }
+        }
+
+        /* Change text alignment to center on screens smaller than 768px */
+        @media (max-width: 768px) {
+            h1 {
+                text-align: center;
+            }
+
+            p {
+                text-align: center;
+            }
+        }
+
+        /* Adjust padding and margins for containers on mobile devices */
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+                margin: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container">
+        <h1>Responsive Design Example</h1>
+        <p>This webpage demonstrates how to create responsive designs using media queries.</p>
+
+        <!-- Image (will be hidden on smaller screens) -->
+        <img src="web.png" alt="Sample Image" class="image">
+
+        <!-- Additional Content -->
+        <p>Resize the browser window to see the effects of different screen sizes.</p>
+    </div>
+
+</body>
+</html>

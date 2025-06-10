@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Variables in JavaScript</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    .output-box {
+      background-color: #f4f4f4;
+      padding: 10px;
+      margin-top: 10px;
+      border-left: 5px solid #007BFF;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>JavaScript Variable Types</h1>
+  <p><strong>Open the browser console</strong> (Right-click > Inspect > Console) to see the log output.</p>
+
+  <div id="varOutput" class="output-box"></div>
+  <div id="letOutput" class="output-box"></div>
+  <div id="constOutput" class="output-box"></div>
+
+  <script>
+    // Using var
+    var name = "Rabin";
+    console.log("Using var: " + name);
+    document.getElementById("varOutput").innerHTML = "Using var: " + name;
+
+    // Using let
+    let age = 20;
+    console.log("Using let: Age is " + age);
+    document.getElementById("letOutput").innerHTML = "Using let: Age is " + age;
+
+    // Using const
+    const country = "Nepal";
+    console.log("Using const: Country is " + country);
+    document.getElementById("constOutput").innerHTML = "Using const: Country is " + country;
+
+    // Extra: showing how let and var behave differently in scope
+    if (true) {
+      var x = "I am var scoped";
+      let y = "I am let scoped";
+      console.log(x); // Works
+      console.log(y); // Works
+    }
+
+    console.log(x); // Still works (var is function-scoped)
+    // console.log(y); // Would give error (let is block-scoped)
+  </script>
+
+</body>
+</html>

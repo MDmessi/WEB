@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Box Shadows & Text Effects</title>
+    <style>
+        /* General Body Styling */
+        body {
+            background-color: #1c1c1c;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+        }
+
+        /* Box with a Red Shadow Effect */
+        .box-red-shadow {
+            width: 300px;
+            height: 150px;
+            margin: 30px auto;
+            background-color: #ff4d4d;
+            border-radius: 15px;
+            box-shadow: 10px 10px 20px rgba(255, 0, 0, 0.7); /* Red shadow */
+            transition: box-shadow 0.3s ease-in-out;
+        }
+
+        /* Hover effect to change the box shadow color */
+        .box-red-shadow:hover {
+            box-shadow: 10px 10px 30px rgba(0, 255, 0, 0.7); /* Green shadow on hover */
+        }
+
+        /* Box with Multiple Shadows */
+        .box-multiple-shadows {
+            width: 300px;
+            height: 150px;
+            margin: 30px auto;
+            background: linear-gradient(45deg, #ff7e5f, #feb47b);
+            border-radius: 15px;
+            box-shadow: 5px 5px 10px rgba(255, 0, 0, 0.5), -5px -5px 10px rgba(0, 255, 0, 0.3), 10px 10px 20px rgba(0, 0, 255, 0.4);
+            transition: box-shadow 0.3s ease-in-out;
+        }
+
+        /* Hover effect for multiple shadows */
+        .box-multiple-shadows:hover {
+            box-shadow: 10px 10px 30px rgba(255, 255, 0, 0.7), -10px -10px 30px rgba(0, 0, 255, 0.7);
+        }
+
+        /* Neon Glow Text Effect */
+        .neon-text {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #fff;
+            text-shadow: 0 0 5px #ff6ec7, 0 0 10px #ff6ec7, 0 0 20px #ff6ec7, 0 0 30px #ff6ec7, 0 0 40px #ff6ec7;
+        }
+
+        /* Box with Shadow Only on the Right */
+        .right-shadow-box {
+            width: 300px;
+            height: 150px;
+            margin: 30px auto;
+            background-color: #4b6cb7;
+            border-radius: 15px;
+            box-shadow: 15px 0 15px rgba(0, 0, 0, 0.5);
+        }
+
+        /* 3D Button Effect */
+        .button-3d {
+            padding: 12px 25px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3), 0 0 10px rgba(0, 0, 255, 0.5); /* 3D depth effect */
+            cursor: pointer;
+            transition: box-shadow 0.3s ease, transform 0.3s ease;
+        }
+
+        /* Button Hover Effect */
+        .button-3d:hover {
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5), 0 0 15px rgba(0, 255, 255, 0.5); /* Enhanced 3D effect */
+            transform: translateY(-5px); /* Button lift effect */
+        }
+
+        /* Text Shadow for Heading (h1) */
+        h1 {
+            text-shadow: 3px 3px 10px rgba(255, 0, 0, 0.7); /* Red shadow for h1 */
+        }
+
+        /* Text Shadow for Paragraph (p) */
+        p {
+            text-shadow: 2px 2px 5px rgba(0, 255, 0, 0.5); /* Green shadow for p */
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Box Shadows & Text Effects</h1>
+    <p>Demonstrating various shadow and text effects in HTML and CSS.</p>
+
+    <!-- Box with a Red Shadow -->
+    <div class="box-red-shadow">
+        <p>Red Shadow Box</p>
+    </div>
+
+    <!-- Box with Multiple Shadows -->
+    <div class="box-multiple-shadows">
+        <p>Multiple Shadows</p>
+    </div>
+
+    <!-- Neon Text Effect -->
+    <div class="neon-text">Neon Glow Effect</div>
+
+    <!-- Box with Shadow Only on the Right -->
+    <div class="right-shadow-box">
+        <p>Right Shadow Box</p>
+    </div>
+
+    <!-- 3D Button -->
+    <button class="button-3d">Click Me</button>
+
+</body>
+</html>

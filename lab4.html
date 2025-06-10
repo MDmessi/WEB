@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Handling in HTML</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .output { margin-top: 10px; padding: 10px; background: #f0f0f0; border-radius: 4px; }
+    </style>
+</head>
+<body>
+    <h1>Event Handling in HTML</h1>
+
+    <!-- Window Events -->
+    <div>
+        <h3>Window Events</h3>
+        <div class="output" id="windowOutput"></div>
+    </div>
+
+    <!-- Form Element Events -->
+    <div>
+        <h3>Form Element Events</h3>
+        <input type="text" id="username" placeholder="Enter username">
+        <div class="output" id="formOutput"></div>
+    </div>
+
+    <!-- Keyboard Events -->
+    <div>
+        <h3>Keyboard Events</h3>
+        <input type="text" id="keyboardInput" placeholder="Type here">
+        <div class="output" id="keyboardOutput"></div>
+    </div>
+
+    <!-- Mouse Events -->
+    <div>
+        <h3>Mouse Events</h3>
+        <div id="mouseBox" style="width: 150px; height: 80px; background: #c303e1; color: white; text-align: center; line-height: 80px; border-radius: 4px;">
+            Click Me!
+        </div>
+        <div class="output" id="mouseOutput"></div>
+    </div>
+
+    <script>
+        // Window Events
+        window.addEventListener("load", () => {
+            document.getElementById("windowOutput").textContent = "Page loaded!";
+        });
+
+        // Form Element Events
+        document.getElementById("username").addEventListener("input", (e) => {
+            document.getElementById("formOutput").textContent = `Typing: ${e.target.value}`;
+        });
+
+        // Keyboard Events
+        document.getElementById("keyboardInput").addEventListener("keydown", (e) => {
+            document.getElementById("keyboardOutput").textContent = `Key pressed: ${e.key}`;
+        });
+
+        // Mouse Events
+        document.getElementById("mouseBox").addEventListener("click", () => {
+            document.getElementById("mouseOutput").textContent = "Box clicked!";
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,135 @@
+=<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup Form</title>
+    <style>
+        /* Just some basic styling to make it look decent */
+        .container {
+            max-width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+        }
+        .error {
+            color: red;
+            font-size: 0.8em;
+            display: none;
+        }
+        input {
+            width: 100%;
+            padding: 8px;
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Sign Up</h2>
+        <form id="signupForm" onsubmit="return validateForm(event)">
+            <div>
+                <label>Name:</label>
+                <input type="text" id="name" name="name">
+                <span id="nameError" class="error">Name cannot be empty</span>
+            </div>
+            <div>
+                <label>Email:</label>
+                <input type="email" id="email" name="email">
+                <span id="emailError" class="error">Please enter a valid email</span>
+            </div>
+            <div>
+                <label>Password:</label>
+                <input type="password" id="password" name="password">
+                <span id="passwordError" class="error">Password must start with a letter, end with a digit, and be at least 6 characters</span>
+            </div>
+            <div>
+                <label>Age:</label>
+                <input type="number" id="age" name="age">
+                <span id="ageError" class="error">Age must be between 8 and 60</span>
+            </div>
+            <button type="submit">Sign Up</button>
+        </form>
+    </div>
+
+    <script>
+        // Main validation function that runs when form is submitted
+        function validateForm(event) {
+            event.preventDefault(); // Stop the form from submitting right away
+            
+            // Let's check each field and keep track if everything's good
+            let isValid = true;
+            
+            // Reset all error messages first
+            hideAllErrors();
+            
+            // Check each field one by one
+            if (!validateName()) isValid = false;
+            if (!validateEmail()) isValid = false;
+            if (!validatePassword()) isValid = false;
+            if (!validateAge()) isValid = false;
+            
+            // If everything checks out, we can proceed
+            if (isValid) {
+                alert("Form submitted successfully!");
+                // Here you could add code to actually submit the form to a server
+            }
+            
+            return isValid;
+        }
+
+        // Hide all error messages to start fresh
+        function hideAllErrors() {
+            document.querySelectorAll('.error').forEach(error => {
+                error.style.display = 'none';
+            });
+        }
+
+        // Check if name isn't empty
+        function validateName() {
+            const name = document.getElementById('name').value.trim();
+            if (name === '') {
+                document.getElementById('nameError').style.display = 'block';
+                return false;
+            }
+            return true;
+        }
+
+        // Make sure email looks legit
+        function validateEmail() {
+            const email = document.getElementById('email').value.trim();
+            // Simple email regex - not perfect but good enough for basic checking
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            
+            if (!emailPattern.test(email)) {
+                document.getElementById('emailError').style.display = 'block';
+                return false;
+            }
+            return true;
+        }
+
+        // Password has some specific rules to follow
+        function validatePassword() {
+            const password = document.getElementById('password').value;
+            // Regex: starts with letter, ends with digit, at least 6 chars
+            const passwordPattern = /^[a-zA-Z].*\d$/;
+            
+            if (password.length < 6 || !passwordPattern.test(password)) {
+                document.getElementById('passwordError').style.display = 'block';
+                return false;
+            }
+            return true;
+        }
+
+        // Age needs to be in our allowed range
+        function validateAge() {
+            const age = document.getElementById('age').value;
+            if (age === '' || age < 8 || age > 60) {
+                document.getElementById('ageError').style.display = 'block';
+                return false;
+            }
+            return true;
+        }
+    </script>
+</body>
+</html>
